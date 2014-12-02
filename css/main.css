@@ -1199,15 +1199,33 @@ transform: rotateZ(10deg);
   padding: 0px;
   margin: 0px;
 }
-.recourse {
+.card {
   float: left;
   height: 80px;
   width: 56px;
   background-image: url('../pics/catan5.jpg');
   background-size: auto 100%;
+  font-size: 40px;
+  line-height: 80px;
+  text-align: center;
+  color: #FFF;
+   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
-.recourse.r1 { background-position: 0% 0%; }
-.recourse.r2 { background-position: 25% 0%; }
-.recourse.r3 { background-position: 50% 0%; }
-.recourse.r4 { background-position: 75% 0%; }
-.recourse.r5 { background-position: 100% 0%; }
+
+
+.card.clay { background-position: 0% 0%; }
+.card.wood { background-position: 25% 0%; }
+.card.iron { background-position: 50% 0%; }
+.card.sheep { background-position: 75% 0%; }
+.card.wheat { background-position: 100% 0%; }
+
+.card.back {
+  background-image: url('../pics/back.jpg');
+  background-size: auto 115%;
+  background-position: 0% 50%;
+}
+.card.special {
+  background-image: url('../pics/back.jpg');
+  background-size: auto 115%;
+  background-position: 100% 50%;
+}

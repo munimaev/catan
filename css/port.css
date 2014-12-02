@@ -172,30 +172,30 @@ position: absolute;;
 
 /*  Y10 */
 .port.X4.Y10 {
-  top:770px;
-  left: 280px;
+  top:784px;
+  left: 200px;
 }
 .port.X5.Y10 {
-  top:802px;
-  left: 303px;
+  top:814px;
+  left: 254px;
     -webkit-transform:rotate3d(0,0,1,60deg);
 }
 
 .port.X7.Y10 {
-  top:792px;
-  left: 482px;
+  top:814px;
+  left: 446px;
     -webkit-transform:rotate3d(0,0,1,300deg);
 }
 .port.X8.Y10 {
-  top:770px;
-  left: 580px;
+  top:784px;
+  left: 500px;
 }
 
 
 
 /*  Y11 */
 .port.X6.Y11 {
-  top:856px;
-  left: 430px;
+  top:870px;
+  left: 350px;
 }
 
