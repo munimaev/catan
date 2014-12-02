@@ -1,0 +1,201 @@
+
+.port {
+  width: 100px;
+  height: 40px;background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #6d0019 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 0%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 0%,#6d0019 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 0%,#6d0019 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ffffff 0%,#6d0019 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#6d0019',GradientType=0 ); 
+position: absolute;;
+}
+
+
+
+/*  Y1 */
+.port.X5.Y1 {
+  top:13px;
+  left: 252px;
+    -webkit-transform:rotate3d(0,0,1,120deg);
+}
+.port.X6.Y1 {
+  top:-45px;
+  left: 350px;
+    -webkit-transform:rotate3d(0,0,1,180deg);
+}
+.port.X7.Y1 {
+  top:13px;
+  left: 448px;
+    -webkit-transform:rotate3d(0,0,1,240deg);
+}
+
+/*  Y2 */
+.port.X3.Y2 {
+  top:100px;
+  left: 102px;
+    -webkit-transform:rotate3d(0,0,1,120deg);
+}
+.port.X4.Y2 {
+  top:41.602px;
+  left: 200px;
+    -webkit-transform:rotate3d(0,0,1,180deg);
+  }
+
+.port.X8.Y2 {
+  top:41.602px;
+  left: 500px;
+    -webkit-transform:rotate3d(0,0,1,180deg);
+  }
+.port.X9.Y2 {
+  top:100px;
+  left: 598px;
+    -webkit-transform:rotate3d(0,0,1,240deg);
+}
+
+
+/*  Y3 */
+.port.X1.Y3 {
+  top:186.205080757px;
+  left: -48px;
+    -webkit-transform:rotate3d(0,0,1,120deg);
+}
+.port.X2.Y3 {
+  top:128.205080757px;
+  left: 50px;
+    -webkit-transform:rotate3d(0,0,1,180deg);
+  }
+.port.X10.Y3 {
+  top:128.205080757px;
+  left: 650px;
+    -webkit-transform:rotate3d(0,0,1,180deg);
+  }
+.port.X11.Y3 {
+  top:186.205080757px;
+  left: 748px;
+    -webkit-transform:rotate3d(0,0,1,240deg);
+}
+
+
+/*  Y4 */
+.port.X1.Y4 {
+  top:292.807621135px;
+  left: -48px;
+    -webkit-transform:rotate3d(0,0,1,60deg);
+}
+
+.port.X11.Y4 {
+  top:292.807621135px;
+  left: 748px;
+    -webkit-transform:rotate3d(0,0,1,300deg);
+}
+
+
+/*  Y5 */
+.port.X1.Y5 {
+  top:359.410161514px;
+  left: -48px;
+    -webkit-transform:rotate3d(0,0,1,120deg);
+}
+.port.X11.Y5 {
+  top:359.410161514px;
+  left: 748px;
+    -webkit-transform:rotate3d(0,0,1,240deg);
+}
+
+
+
+/*  Y6 */
+.port.X1.Y6 {
+  top:466.012701892px;
+  left: -48px;
+    -webkit-transform:rotate3d(0,0,1,60deg);
+}
+
+.port.X11.Y6 {
+  top:466.012701892px;
+  left: 748px;
+    -webkit-transform:rotate3d(0,0,1,300deg);
+}
+
+
+/*  Y7 */
+.port.X1.Y7 {
+  top:532.615242271px;
+  left: -48px;
+    -webkit-transform:rotate3d(0,0,1,120deg);
+}
+.port.X11.Y7 {
+  top:532.615242271px;
+  left: 748px;
+    -webkit-transform:rotate3d(0,0,1,240deg);
+}
+
+
+
+/*  Y8 */
+.port.X1.Y8 {
+  top:639.21778265px;
+  left: -48px;
+    -webkit-transform:rotate3d(0,0,1,60deg);
+}
+.port.X11.Y8 {
+  top:639.21778265px;
+  left: 748px;
+    -webkit-transform:rotate3d(0,0,1,300deg);
+}
+
+
+/*  Y9 */
+.port.X2.Y9 {
+  top:697.820323028px;
+  left: 50px;
+  }
+.port.X3.Y9 {
+  top:725.820323028px;
+  left: 102px;
+    -webkit-transform:rotate3d(0,0,1,60deg);
+}
+
+.port.X9.Y9 {
+  top:725.820323028px;
+  left: 600px;
+    -webkit-transform:rotate3d(0,0,1,300deg);
+}
+.port.X10.Y9 {
+  top:697.820323028px;
+  left: 650px;
+  }
+
+
+
+/*  Y10 */
+.port.X4.Y10 {
+  top:770px;
+  left: 280px;
+}
+.port.X5.Y10 {
+  top:802px;
+  left: 303px;
+    -webkit-transform:rotate3d(0,0,1,60deg);
+}
+
+.port.X7.Y10 {
+  top:792px;
+  left: 482px;
+    -webkit-transform:rotate3d(0,0,1,300deg);
+}
+.port.X8.Y10 {
+  top:770px;
+  left: 580px;
+}
+
+
+
+/*  Y11 */
+.port.X6.Y11 {
+  top:856px;
+  left: 430px;
+}
+
