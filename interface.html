@@ -1,0 +1,400 @@
+<html><head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/hexagon.css" rel="stylesheet" type="text/css">
+    <link href="css/port.css" rel="stylesheet" type="text/css">
+    <link href="css/road.css" rel="stylesheet" type="text/css">
+    <link href="css/village.css" rel="stylesheet" type="text/css">
+    <link href="css/interface.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+
+<div class="d3">
+<div class="rotate">
+
+<div class="board" id="board"></div>
+
+<div class="buildings" id="buildings"></div>
+
+</div>
+</div>
+
+
+<div class="interface your">
+  <div class="player you">
+  <div id="youBar">
+    <table cellpadding="0" cellspacing="1px">
+        <tbody><tr>
+          <td>build</td>
+          <td>cost</td>
+          <td> </td>
+          <td>Русурсы</td>
+          <td> </td>
+          <td>Карты</td>
+          <td> </td>
+          <td>Рыцари</td>
+          <td> </td>
+          <td>Очки</td>
+        </tr>
+        <tr>
+          <td onclick="Action.build.road();" onmouseover="Action.hover.road();">road</td>
+          <td>[ ][ ]</td>
+          <td rowspan="4"></td>
+          <td rowspan="4">
+            <div class="card wheat"></div>
+            <div class="card clay"></div>
+            <div class="card iron"></div>
+            <div class="card wood"></div>
+            <div class="card wood"></div>
+          </td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+        </tr>
+        <tr>
+          <td onclick="Action.build.village();"  onmouseover="Action.hover.village();">village</td>
+          <td>[ ][ ][ ][ ]</td>
+        </tr>
+        <tr>
+          <td onclick="Action.build.city();" onmouseover="Action.hover.city();">city</td>
+          <td>[ ][ ][ ][ ][ ]</td>
+        </tr>
+        <tr>
+          <td onclick="Action.build.card();" onmouseover="Action.hover.card();">card</td>
+          <td>[ ][ ][ ]</td>
+        </tr>
+    </tbody></table>
+  </div>
+  </div>
+</div>
+
+
+
+<div class="interface opps">
+  <div class="player opp" style="width:31%">
+    <div id="opp1Bar">
+      <table cellpadding="0" cellspacing="1px">
+          <tbody><tr>
+            <td>Русурсы</td>
+            <td> </td>
+            <td>Карты</td>
+            <td> </td>
+            <td>Рыцари</td>
+            <td> </td>
+            <td>Очки</td>
+          </tr>
+          <tr>
+            <td rowspan="4">
+              <div class="card back">×3</div>
+            </td>
+            <td rowspan="4"></td>
+            <td rowspan="4">
+              <div class="card special">×1</div>
+            </td>
+            <td rowspan="4"></td>
+            <td rowspan="4"></td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+      </tbody></table>
+   </div>
+  </div>
+  <div class="player opp" style="width:32%">
+    <div id="opp2Bar">
+      <table cellpadding="0" cellspacing="1px">
+          <tbody><tr>
+            <td>Русурсы</td>
+            <td> </td>
+            <td>Карты</td>
+            <td> </td>
+            <td>Рыцари</td>
+            <td> </td>
+            <td>Очки</td>
+          </tr>
+          <tr>
+            <td rowspan="4">
+              <div class="card back">×3</div>
+            </td>
+            <td rowspan="4"></td>
+            <td rowspan="4">
+              <div class="card special">×1</div>
+            </td>
+            <td rowspan="4"></td>
+            <td rowspan="4"></td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+      </tbody></table>
+    </div>
+  </div>
+  <div class="player opp" style="width:31%">
+  <div id="opp3Bar">
+    <table cellpadding="0" cellspacing="1px">
+        <tbody><tr>
+          <td>Русурсы</td>
+          <td> </td>
+          <td>Карты</td>
+          <td> </td>
+          <td>Рыцари</td>
+          <td> </td>
+          <td>Очки</td>
+        </tr>
+        <tr>
+          <td rowspan="4">
+            <div class="card back">×3</div>
+          </td>
+          <td rowspan="4"></td>
+          <td rowspan="4">
+            <div class="card special">×1</div>
+          </td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+    </tbody></table>
+  </div>
+  </div>
+</div>
+
+
+<script src="js/Action.js"></script>
+<script src="js/Board.js"></script>
+<script src="js/Hexagon.js"></script>
+<script src="js/Village.js"></script>
+<script src="js/Road.js"></script>
+<script src="js/Player.js"></script>
+<script>
+    var args = {
+      hexes: [{
+          x: 0,
+          y: 2,
+          type: "ocean"
+        }, {
+          x: 0,
+          y: 4,
+          type: "ocean"
+        }, {
+          x: 0,
+          y: 6,
+          type: "ocean"
+        }, {
+          x: 0,
+          y: 8,
+          type: "ocean"
+        },
+
+
+        {
+          x: 1,
+          y: 1,
+          type: "ocean"
+        }, {
+          x: 1,
+          y: 3,
+          type: "forest"
+        }, {
+          x: 1,
+          y: 5,
+          type: "plain"
+        }, {
+          x: 1,
+          y: 7,
+          type: "plain"
+        }, {
+          x: 1,
+          y: 9,
+          type: "ocean"
+        },
+
+
+        {
+          x: 2,
+          y: 0,
+          type: "ocean"
+        }, {
+          x: 2,
+          y: 2,
+          type: "forest"
+        }, {
+          x: 2,
+          y: 4,
+          type: "plain"
+        }, {
+          x: 2,
+          y: 6,
+          type: "mountain"
+        }, {
+          x: 2,
+          y: 8,
+          type: "valley"
+        }, {
+          x: 2,
+          y: 10,
+          type: "ocean"
+        },
+
+        {
+          x: 3,
+          y: -1,
+          type: "ocean"
+        }, {
+          x: 3,
+          y: 1,
+          type: "hill"
+        }, {
+          x: 3,
+          y: 3,
+          type: "mountain"
+        }, {
+          x: 3,
+          y: 5,
+          type: "valley"
+        }, {
+          x: 3,
+          y: 7,
+          type: "dessert"
+        }, {
+          x: 3,
+          y: 9,
+          type: "forest"
+        }, {
+          x: 3,
+          y: 11,
+          type: "ocean"
+        },
+
+
+
+        {
+          x: 4,
+          y: 0,
+          type: "ocean"
+        }, {
+          x: 4,
+          y: 2,
+          type: "valley"
+        }, {
+          x: 4,
+          y: 4,
+          type: "hill"
+        }, {
+          x: 4,
+          y: 6,
+          type: "forest"
+        }, {
+          x: 4,
+          y: 8,
+          type: "valley"
+        }, {
+          x: 4,
+          y: 10,
+          type: "ocean"
+        },
+
+        {
+          x: 5,
+          y: 1,
+          type: "ocean"
+        }, {
+          x: 5,
+          y: 3,
+          type: "hill"
+        }, {
+          x: 5,
+          y: 5,
+          type: "plain"
+        }, {
+          x: 5,
+          y: 7,
+          type: "mountain"
+        }, {
+          x: 5,
+          y: 9,
+          type: "ocean"
+        },
+
+
+        {
+          x: 6,
+          y: 2,
+          type: "ocean"
+        }, {
+          x: 6,
+          y: 4,
+          type: "ocean"
+        }, {
+          x: 6,
+          y: 6,
+          type: "ocean"
+        }, {
+          x: 6,
+          y: 8,
+          type: "ocean"
+        }
+      ],
+
+      villages: [{
+        x: 3,
+        y: 3,
+        color: 'red'
+      }, {
+        x: 5,
+        y: 4,
+        color: 'orange'
+      }],
+      roads: [{
+        x: 3,
+        y: 3,
+        color: 'red'
+      }, {
+        x: 5,
+        y: 4,
+        color: 'orange'
+      }],
+
+      players: [{
+        role: 'opp2',
+        color: 'blue'
+      }, {
+        role: 'you',
+        color: 'red'
+      }, {
+        role: 'opp1',
+        color: 'orange'
+      },{
+        role: 'opp3',
+        color: 'white'
+      }]
+    }
+    var board = new Board(args);
+    board.createHTML();
+    //board.createTiles();
+    //board.createVillages();
+    //board.createRoads();
+</script>
+
+
+
+
+
+
+
+</body></html>
