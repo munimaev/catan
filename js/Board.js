@@ -16,6 +16,8 @@ var Board = function (args) {
   this.villages = {};
   this.roads = {};
   this.flags = {};
+  this.players = {
+  };
   this.flags.createTiles = false;
   this.flags.createVillages = false;
 }
@@ -50,10 +52,23 @@ Board.prototype.initialRoads = function() {
     this.roads[i].createHTML();
   }
 }
+Board.prototype.initialPlayers = function() {
+  var playerArgs = this.args.players; 
+  for (var i in playerArgs) {
+    var key = playerArgs[i].role;
+    this.players[key] = new Player(playerArgs[i]);
+  }
+
+  for (var i in this.players) {
+    this.players[i].createHTML();
+  }
+
+}
 Board.prototype.createHTML = function() {
   this.initialHexagon();
   this.initialVillages();
   this.initialRoads();
+  this.initialPlayers();
 }
 Board.prototype.createTiles = function() {
   if (this.flags.createTile) {
