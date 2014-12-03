@@ -149,3 +149,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffff00', e
   background-size: auto 115%;
   background-position: 100% 50%;
 }
+
+#clay ,
+#wood ,
+#iron ,
+#sheep ,
+#wheat {
+  height: 80px;
+  float: left;
+}
+

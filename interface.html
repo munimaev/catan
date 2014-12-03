@@ -43,11 +43,16 @@
           <td>[ ][ ]</td>
           <td rowspan="4"></td>
           <td rowspan="4">
-            <div class="card wheat"></div>
-            <div class="card clay"></div>
+            <div id="wood"></div>
+            <div id="clay"></div>
+            <div id="wheat"></div>
+            <div id="sheep"></div>
+            <div id="iron"></div>
+            <!-- <div class="card clay"></div>
+            <div class="card wood"></div>
             <div class="card iron"></div>
-            <div class="card wood"></div>
-            <div class="card wood"></div>
+            <div class="card sheep"></div>
+            <div class="card wheat"></div> -->
           </td>
           <td rowspan="4"></td>
           <td rowspan="4"></td>
@@ -370,25 +375,70 @@
         color: 'orange'
       }],
 
-      players: [{
+      players: {opp2:{
         role: 'opp2',
-        color: 'blue'
-      }, {
+        color: 'blue',
+        resourses : 3,
+        cards : 2,
+        used:{}
+      }, you:{
         role: 'you',
-        color: 'red'
-      }, {
+        color: 'red',
+        resourses : {'wood':0,'clay':1,'wheat':2,'sheep':3,'iron':4},
+        cards : 2,
+        used:{}
+      }, opp1:{
         role: 'opp1',
-        color: 'orange'
-      },{
+        color: 'orange',
+        resourses : 3,
+        cards : 2,
+        used:{}
+      },opp3:{
         role: 'opp3',
-        color: 'white'
-      }]
+        color: 'white',
+        resourses : 3,
+        cards : 2,
+        used:{}
+      }}
     }
+    
     var board = new Board(args);
     board.createHTML();
     //board.createTiles();
     //board.createVillages();
     //board.createRoads();
+    board.updatePlayersData(args);
+    board.updatePlayers();
+
+    
+    board.updatePlayersData({
+      players: {opp2:{
+        role: 'opp2',
+        color: 'blue',
+        resourses : 3,
+        cards : 2,
+        used:{}
+      }, you:{
+        role: 'you',
+        color: 'red',
+        resourses : {'wood':2,'clay':2,'wheat':1,'sheep':2,'iron':2},
+        cards : 2,
+        used:{}
+      }, opp1:{
+        role: 'opp1',
+        color: 'orange',
+        resourses : 3,
+        cards : 2,
+        used:{}
+      },opp3:{
+        role: 'opp3',
+        color: 'white',
+        resourses : 3,
+        cards : 2,
+        used:{}
+      }}
+    });
+    board.updatePlayers();
 </script>
 
 

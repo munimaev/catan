@@ -126,3 +126,25 @@ Board.prototype.createRoads = function() {
   }
   var setIntervalId = setInterval(func, 400)
 }
+
+Board.prototype.updatePlayersData = function(args) {
+  if (!(args.hasOwnProperty('players'))) {
+    debugger;
+  }
+  for (var i in this.players) {
+    if(!(args.players.hasOwnProperty(i))) {
+      debugger;
+    }
+    this.players[i].updateData(args.players[i]);
+  }
+
+} 
+Board.prototype.updatePlayers = function() {
+  for (var i in this.players) {
+    if(!(args.players.hasOwnProperty(i))) {
+      debugger;
+    }
+    this.players[i].updateHTML();
+  }
+
+}
