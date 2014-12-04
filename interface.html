@@ -24,54 +24,78 @@
 
 <div class="interface your">
   <div class="player you">
-  <div id="youBar">
-    <table cellpadding="0" cellspacing="1px">
-        <tbody><tr>
-          <td>build</td>
-          <td>cost</td>
-          <td> </td>
+  <div id="you">
+    <table cellpadding="0" cellspacing="1px" width="100%">
+        <tbody valign="top"><tr>
+          <td width="50px">build</td>
+          <td width="100px">cost</td>
+          <td rowspan="5">&nbsp;</td>
           <td>Русурсы</td>
-          <td> </td>
+          <td rowspan="5">&nbsp;</td>
           <td>Карты</td>
-          <td> </td>
-          <td>Рыцари</td>
-          <td> </td>
+          <td rowspan="5">&nbsp;</td>
+          <td>Сыгранные</td>
+          <td rowspan="5">&nbsp;</td>
           <td>Очки</td>
         </tr>
         <tr>
           <td onclick="Action.build.road();" onmouseover="Action.hover.road();">road</td>
-          <td>[ ][ ]</td>
-          <td rowspan="4"></td>
-          <td rowspan="4">
+          <td>
+            <div class="resourse_icon wood"></div>
+             <div class="resourse_icon clay"></div> 
+          </td>
+          <td rowspan="4" style="display:block;position:relative">
+              <div class="test">
             <div id="wood"></div>
             <div id="clay"></div>
-            <div id="wheat"></div>
             <div id="sheep"></div>
+            <div id="wheat"></div>
             <div id="iron"></div>
-            <!-- <div class="card clay"></div>
-            <div class="card wood"></div>
-            <div class="card iron"></div>
-            <div class="card sheep"></div>
-            <div class="card wheat"></div> -->
+            </div>
           </td>
-          <td rowspan="4"></td>
-          <td rowspan="4"></td>
-          <td rowspan="4"></td>
-          <td rowspan="4"></td>
-          <td rowspan="4"></td>
-          <td rowspan="4"></td>
+          <td rowspan="4" style="display:block;position:relative">
+              <div class="test">
+            <div id="knight"></div>
+            <div id="plenty"></div>
+            <div id="monopoly"></div>
+            <div id="point"></div>
+            <div id="buildroad"></div>
+            </div>
+          </td>
+          <td rowspan="4" style="display:block;position:relative">
+              <div class="test">
+            <div id="youknight"></div>
+            <div id="youplenty"></div>
+            <div id="youmonopoly"></div>
+            <div id="youpoint"></div>
+            <div id="youbuildroad"></div>
+            </div>
+          </td>
+          <td rowspan="4" class="victoryPoints">N</td>
         </tr>
         <tr>
           <td onclick="Action.build.village();"  onmouseover="Action.hover.village();">village</td>
-          <td>[ ][ ][ ][ ]</td>
+          <td>
+            <div class="resourse_icon wood"></div>
+             <div class="resourse_icon clay"></div> 
+            <div class="resourse_icon sheep"></div>
+             <div class="resourse_icon wheat"></div> </td>
         </tr>
         <tr>
           <td onclick="Action.build.city();" onmouseover="Action.hover.city();">city</td>
-          <td>[ ][ ][ ][ ][ ]</td>
+          <td>
+             <div class="resourse_icon wheat"></div>
+             <div class="resourse_icon wheat"></div>
+             <div class="resourse_icon iron"></div>
+             <div class="resourse_icon iron"></div>
+             <div class="resourse_icon iron"></div></td>
         </tr>
         <tr>
           <td onclick="Action.build.card();" onmouseover="Action.hover.card();">card</td>
-          <td>[ ][ ][ ]</td>
+          <td>
+             <div class="resourse_icon sheep"></div>
+             <div class="resourse_icon wheat"></div>
+             <div class="resourse_icon iron"></div></td>
         </tr>
     </tbody></table>
   </div>
@@ -82,27 +106,33 @@
 
 <div class="interface opps">
   <div class="player opp" style="width:31%">
-    <div id="opp1Bar">
-      <table cellpadding="0" cellspacing="1px">
-          <tbody><tr>
-            <td>Русурсы</td>
-            <td> </td>
-            <td>Карты</td>
-            <td> </td>
-            <td>Рыцари</td>
-            <td> </td>
+    <div id="opp1">
+      <table cellpadding="0" cellspacing="1px" width="100%">
+          <tbody valign="top"><tr>
+            <td  class="oppResourses">Русурсы</td>
+            <td class="oppResourses">Карты</td>
+            <td rowspan="5">&nbsp;</td>
+            <td>Сыгранные</td>
+            <td rowspan="5">&nbsp;</td>
             <td>Очки</td>
           </tr>
           <tr>
             <td rowspan="4">
               <div class="card back">×3</div>
             </td>
-            <td rowspan="4"></td>
             <td rowspan="4">
               <div class="card special">×1</div>
             </td>
-            <td rowspan="4"></td>
-            <td rowspan="4"></td>
+            <td rowspan="4">
+              <div class="test">
+                <div id="opp1knight"></div>
+                <div id="opp1plenty"></div>
+                <div id="opp1monopoly"></div>
+                <div id="opp1point"></div>
+                <div id="opp1buildroad"></div>
+              </div>
+            </td>
+          <td rowspan="4" class="victoryPoints">N</td>
           </tr>
           <tr>
           </tr>
@@ -114,27 +144,34 @@
    </div>
   </div>
   <div class="player opp" style="width:32%">
-    <div id="opp2Bar">
-      <table cellpadding="0" cellspacing="1px">
-          <tbody><tr>
-            <td>Русурсы</td>
-            <td> </td>
-            <td>Карты</td>
-            <td> </td>
-            <td>Рыцари</td>
-            <td> </td>
+    <div id="opp2">
+      <table cellpadding="0" cellspacing="1px" width="100%">
+          <tbody valign="top"><tr>
+            <td class="oppResourses">Русурсы</td>
+            <td class="oppResourses">Карты</td>
+            <td rowspan="5">&nbsp;</td>
+            <td>Сыгранные</td>
+            <td rowspan="5">&nbsp;</td>
             <td>Очки</td>
           </tr>
           <tr>
             <td rowspan="4">
               <div class="card back">×3</div>
             </td>
-            <td rowspan="4"></td>
             <td rowspan="4">
               <div class="card special">×1</div>
             </td>
-            <td rowspan="4"></td>
-            <td rowspan="4"></td>
+            <td rowspan="4">
+              <div class="test">
+
+                <div id="opp2knight"></div>
+                <div id="opp2plenty"></div>
+                <div id="opp2monopoly"></div>
+                <div id="opp2point"></div>
+                <div id="opp2buildroad"></div>
+              </div>
+            </td>
+          <td rowspan="4" class="victoryPoints">N</td>
           </tr>
           <tr>
           </tr>
@@ -146,27 +183,33 @@
     </div>
   </div>
   <div class="player opp" style="width:31%">
-  <div id="opp3Bar">
-    <table cellpadding="0" cellspacing="1px">
-        <tbody><tr>
-          <td>Русурсы</td>
-          <td> </td>
-          <td>Карты</td>
-          <td> </td>
-          <td>Рыцари</td>
-          <td> </td>
+  <div id="opp3">
+    <table cellpadding="0" cellspacing="1px" width="100%">
+        <tbody valign="top"><tr>
+          <td  class="oppResourses">Русурсы</td>
+          <td class="oppResourses">Карты</td>
+            <td rowspan="5">&nbsp;</td>
+          <td>Сыгранные</td>
+            <td rowspan="5">&nbsp;</td>
           <td>Очки</td>
         </tr>
         <tr>
           <td rowspan="4">
             <div class="card back">×3</div>
           </td>
-          <td rowspan="4"></td>
           <td rowspan="4">
             <div class="card special">×1</div>
           </td>
-          <td rowspan="4"></td>
-          <td rowspan="4"></td>
+          <td rowspan="4" >
+              <div class="test">
+            <div id="opp3knight"></div>
+            <div id="opp3plenty"></div>
+            <div id="opp3monopoly"></div>
+            <div id="opp3point"></div>
+            <div id="opp3buildroad"></div>
+            </div>
+          </td>
+          <td rowspan="4" class="victoryPoints">N</td>
         </tr>
         <tr>
         </tr>
@@ -184,8 +227,10 @@
 <script src="js/Board.js"></script>
 <script src="js/Hexagon.js"></script>
 <script src="js/Village.js"></script>
-<script src="js/Road.js"></script>
+<script src="js/road.js"></script>
 <script src="js/Player.js"></script>
+<script src="js/PlayerOpp.js"></script>
+<script src="js/PlayerYou.js"></script>
 <script>
     var args = {
       hexes: [{
@@ -380,25 +425,25 @@
         color: 'blue',
         resourses : 3,
         cards : 2,
-        used:{}
+        used:{'knight':8, 'plenty':0, 'monopoly':0, 'point':0, 'buildroad':0}
       }, you:{
         role: 'you',
         color: 'red',
-        resourses : {'wood':0,'clay':1,'wheat':2,'sheep':3,'iron':4},
-        cards : 2,
-        used:{}
+        resourses : {'wood':10,'clay':1,'wheat':2,'sheep':3,'iron':4},
+        cards : {'knight':1, 'plenty':0, 'monopoly':0, 'point':0, 'buildroad':0},
+        used:{'knight':0, 'plenty':0, 'monopoly':0, 'point':1, 'buildroad':0}
       }, opp1:{
         role: 'opp1',
         color: 'orange',
         resourses : 3,
         cards : 2,
-        used:{}
+        used:{'knight':0, 'plenty':0, 'monopoly':0, 'point':0, 'buildroad':1}
       },opp3:{
         role: 'opp3',
         color: 'white',
         resourses : 3,
         cards : 2,
-        used:{}
+        used:{'knight':1, 'plenty':1, 'monopoly':0, 'point':0, 'buildroad':0}
       }}
     }
     
@@ -406,7 +451,7 @@
     board.createHTML();
     //board.createTiles();
     //board.createVillages();
-    //board.createRoads();
+    //board.createroads();
     board.updatePlayersData(args);
     board.updatePlayers();
 
@@ -415,30 +460,30 @@
       players: {opp2:{
         role: 'opp2',
         color: 'blue',
-        resourses : 3,
-        cards : 2,
-        used:{}
+        resourses : 0,
+        cards : 1,
+        used:{'knight':1, 'plenty':0, 'monopoly':0, 'point':1, 'buildroad':0}
       }, you:{
         role: 'you',
         color: 'red',
         resourses : {'wood':2,'clay':2,'wheat':1,'sheep':2,'iron':2},
-        cards : 2,
-        used:{}
+        cards : {'knight':1, 'plenty':0, 'monopoly':0, 'point':1, 'buildroad':0},
+        used:{'knight':0, 'plenty':1, 'monopoly':0, 'point':0, 'buildroad':1}
       }, opp1:{
         role: 'opp1',
         color: 'orange',
-        resourses : 3,
-        cards : 2,
-        used:{}
+        resourses : 2,
+        cards : 3,
+        used:{'knight':0, 'plenty':1, 'monopoly':0, 'point':1, 'buildroad':0}
       },opp3:{
         role: 'opp3',
         color: 'white',
-        resourses : 3,
-        cards : 2,
-        used:{}
+        resourses : 4,
+        cards : 5,
+        used:{'knight':2, 'plenty':0, 'monopoly':0, 'point':0, 'buildroad':0}
       }}
     });
-    board.updatePlayers();
+    //board.updatePlayers();
 </script>
 
 
