@@ -67,13 +67,12 @@ Hexagon.prototype.lightAnimationStep = function(H) {
   }
 }
 
-Hexagon.prototype.lightAnimationDone = function(H) {
+Hexagon.prototype.lightAnimationDone = function(H, $link, newClass) {
   var animationStep = this.lightAnimationDoneStep(H);
   var animationDone = this.lightAnimationDoneDone(H);
-  var hexagon = this;
   return function() {
     H.css('fontSize', 14);
-    hexagon.$this.addClass(hexagon.type);
+    $link.addClass(newClass);
     H.animate({
       fontSize: 100
     }, {
@@ -106,8 +105,8 @@ Hexagon.prototype.createTile = function() {
     this['$hex' + i].addClass('inheritShadow');
     // var preH = this['$hex' + i]
 
-    var animationStep = this.lightAnimationStep(this['$hex' + i]);
-    var animationDone = this.lightAnimationDone(this['$hex' + i]);
+    var animationStep = this.lightAnimationStep(this['$hex' + i], this.$this, this.type);
+    var animationDone = this.lightAnimationDone(this['$hex' + i], this.$this, this.type);
     this['$hex' + i].css('fontSize', 14);
     this['$hex' + i].animate({
       fontSize: 100
