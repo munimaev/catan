@@ -56,22 +56,27 @@ box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
     1px 0 black, 0 -1px black,
     0 -1px black, 0 1px black, 
     0 1px  black, 0 -1px black;
+    /*text-align: center;*/
+}
+.player table td{
+  /*overflow: hidden;*/
 }
 
-#youBar, #opp1Bar, #opp2bar, #opp3bar {
+#you, #opp1, #opp2, #opp3 {
   padding: 5px;
   height: 100px;
 }
 
-.player * {
+.player table td,
+.player table tr {
   padding: 0px;
   margin: 0px;
 }
-.player.opp, #opp1Bar, #opp2bar, #opp3bar  {
+.player.opp, #opp1, #opp2, #opp3  {
   -webkit-border-radius: 0 0 5px 5px;
 border-radius: 0 0 5px 5px;
 }
-.player.you, #youBar {
+.player.you, #you {
   -webkit-border-radius: 5px 5px 0 0;
 border-radius: 5px 5px 0 0;
 }
@@ -128,6 +133,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffff00', e
    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
+.card.knight{
+  background-image: url('../pics/catan4.jpg');
+   background-position: 0% 0%; 
+}
+.card.plenty{
+  background-image: url('../pics/catan4.jpg');
+   background-position: 25% 0%; 
+}
+.card.monopoly{
+  background-image: url('../pics/catan4.jpg');
+   background-position: 50% 0%; 
+}
+.card.point{
+  background-image: url('../pics/catan4.jpg');
+   background-position: 75% 0%; 
+}
+.card.buildroad{
+  background-image: url('../pics/catan4.jpg');
+   background-position: 100% 0%; 
+}
+.opp .card,
 .you .card {
   float: left;
 }
@@ -143,19 +169,109 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffff00', e
   background-image: url('../pics/back.jpg');
   background-size: auto 115%;
   background-position: 0% 50%;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 .card.special {
   background-image: url('../pics/back.jpg');
   background-size: auto 115%;
   background-position: 100% 50%;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #clay ,
 #wood ,
 #iron ,
 #sheep ,
-#wheat {
+#wheat ,
+#knight,
+#plenty,
+#monopoly,
+#point,
+#road{
   height: 80px;
   float: left;
 }
 
+#youknight,
+#youplenty,
+#youmonopoly,
+#youpoint,
+#youbuildroad,
+
+#opp1knight,
+#opp1plenty,
+#opp1monopoly,
+#opp1point,
+#opp1buildroad,
+
+#opp2knight,
+#opp2plenty,
+#opp2monopoly,
+#opp2point,
+#opp2buildroad,
+
+#opp3knight,
+#opp3plenty,
+#opp3monopoly,
+#opp3point,
+#opp3buildroad {
+  float: left;
+
+}
+
+.test {
+  overflow-y: auto;
+  height: 80px;
+}
+.test:hover {
+  overflow: visible;
+  height: 80px;
+}
+
+.resourse_icon {
+  display: block;
+  float: left;
+  height: 18px;
+  width: 19px;
+  background-image: url('../pics/resourses_icon_mini.png');
+}
+.resourse_icon.clay {
+  background-position: -1px -1px;
+}
+.resourse_icon.wood {
+  background-position: -21px -1px;
+}
+.resourse_icon.iron {
+  background-position: -41px -1px;
+}
+.resourse_icon.sheep {
+  background-position: -61px -1px;
+}
+.resourse_icon.wheat {
+  background-position: -81px -1px;
+}
+
+.victoryPoints {
+font-size: 60px;
+width: 45px;
+  height: 80px;
+}
+.oppResourses {
+  width: 65px;
+  text-align: center;
+}
+
+.test {
+   width: auto;
+   height: 80px;
+}
+.you .test:hover {
+   height: auto;
+  position: absolute;
+    overflow: visible;
+   bottom: 0px;
+}
