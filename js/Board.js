@@ -32,6 +32,7 @@ Board.prototype.initialHexagon = function() {
     this.hexes[i].createHTML();
   }
 }
+
 Board.prototype.initialVillages = function() {
   var vilArgs = this.args.villages;
   for (var i in vilArgs) {
@@ -42,7 +43,8 @@ Board.prototype.initialVillages = function() {
     this.villages[i].createHTML();
   }
 }
-Board.prototype.initialRoads = function() {
+
+Board.prototype.initialroads = function() {
   var roadArgs = this.args.roads;
   for (var i in roadArgs) {
     var key = 'X' + roadArgs[i].x + 'Y' + roadArgs[i].y
@@ -52,24 +54,31 @@ Board.prototype.initialRoads = function() {
     this.roads[i].createHTML();
   }
 }
+
 Board.prototype.initialPlayers = function() {
   var playerArgs = this.args.players; 
   for (var i in playerArgs) {
     var key = playerArgs[i].role;
-    this.players[key] = new Player(playerArgs[i]);
+    if (key === 'you') {
+      this.players[key] = new PlayerYou(playerArgs[i]);
+    } 
+    else {
+      this.players[key] = new PlayerOpp(playerArgs[i]);
+    }
   }
 
   for (var i in this.players) {
     this.players[i].createHTML();
   }
-
 }
+
 Board.prototype.createHTML = function() {
   this.initialHexagon();
   this.initialVillages();
-  this.initialRoads();
+  this.initialroads();
   this.initialPlayers();
 }
+
 Board.prototype.createTiles = function() {
   if (this.flags.createTile) {
     return;
@@ -111,7 +120,7 @@ Board.prototype.createVillages = function() {
   var setIntervalId = setInterval(func, 400)
 }
 
-Board.prototype.createRoads = function() {
+Board.prototype.createroads = function() {
   var roads = this.roads;
   var board = this;
 
@@ -147,4 +156,13 @@ Board.prototype.updatePlayers = function() {
     this.players[i].updateHTML();
   }
 
+}
+
+
+function extend(Child, Parent) {
+  var F = function() { };
+  F.prototype = Parent.prototype;
+  Child.prototype = new F();
+  Child.prototype.constructor = Child;
+  Child.superclass = Parent.prototype;
 }
