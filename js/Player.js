@@ -12,7 +12,15 @@ var Player = function(args) {
 	this.args = args;
   this.color = args.color;
   this.role = args.role;
-  this.$this = $('#' + args.role + 'Bar')
+  this.$this = $('#' + args.role);
+
+  this.$knight = $('#' + args.role + 'knight');
+  this.$plenty = $('#' + args.role + 'plenty');
+  this.$monopoly = $('#' + args.role + 'monopoly');
+  this.$point = $('#' + args.role + 'point');
+  this.$buildroad = $('#' + args.role + 'buildroad');
+
+
 	this.flags = {
 		createHTML : false,
 	};
@@ -20,16 +28,7 @@ var Player = function(args) {
   this.cards;
   this.cused;
 }
-Player.prototype.youBar  = $('#youBar');
-Player.prototype.opp1Bar = $('#opp1Bar');
-Player.prototype.opp2Bar = $('#opp2Bar');
-Player.prototype.opp3Bar = $('#opp3Bar');
 
-Player.prototype.$wood = $('#wood');
-Player.prototype.$clay = $('#clay');
-Player.prototype.$wheat = $('#wheat');
-Player.prototype.$sheep = $('#sheep');
-Player.prototype.$iron = $('#iron');
 
 Player.prototype.createHTML = function() {
   this.$this.addClass(this.color);
@@ -51,41 +50,83 @@ Player.prototype.updateData = function(args) {
   this.resourses = args.resourses;
   this.cards = args.cards;
   this.used = args.used;
-  if (this.role == 'you') {
-  } 
-  else {
+}
 
+Player.prototype.updateCountCard = function($link, newValue) {
+  console.log(this.role)
+  var doneFunc = this.updateCountCardDone($link, newValue);
+  $link.animate({
+    "font-size" : "10px"
+  },{
+    duration: 400,
+    done : doneFunc
+  })  
+}
+
+Player.prototype.updateCountCardDone = function($link, newValue) {
+  
+  return function() {
+    $link.html(newValue);
+    $link.animate({
+      "font-size": "40px"
+    }, {
+      duration: 100
+    })
   }
 }
-Player.prototype.updateHTML = function() {
-  if (this.role == 'you') {
-    var arr = ['wood','clay','wheat','sheep','iron'];
 
-    for (var r in arr) {
-      if (!(this.resourses.hasOwnProperty(arr[r]))) {
-        debugger;
-      }
-      this['$'+arr[r]].empty();
-      for (var i = 0; i < this.resourses[arr[r]]; i++) {
-        this['$'+arr[r]].append($('<div />',{class:'card ' + arr[r]}))
+Player.prototype.cardIn = function($link, className) {
+  var $div = $('<div />', {
+  });
+  $div.css({
+    'height': '80px',
+    'width': '0px',
+    'float': 'left'
+  })
+
+  $link.append($div);
+
+  var stepFunction = Hexagon.prototype.lightAnimationStep($div)
+  var doneFunction = Hexagon.prototype.lightAnimationDone($div, $div, 'card ' + className);
+  $div.animate({'width':'56px'},{
+    duration: 600,
+    step:stepFunction,
+    done: doneFunction
+  })
+  // $link.append($('<div />', {
+  //   class: 'card ' + className
+  // }))
+}
+
+Player.prototype.cardOut = function($link) {
+  $($link).hide(600, function() {
+    $link.remove()
+  });
+  
+}
+
+Player.prototype.cardChanges = function(arr,resourses, classPrefix) {
+  var classPrefix = classPrefix || '';
+  for (var r in arr) {
+    if (!(resourses.hasOwnProperty(arr[r]))) {
+      debugger;
+    }
+    console.log(this.role , '$' + classPrefix + arr[r])
+    var links = this['$' + classPrefix + arr[r]].children();
+
+    if (links.length > resourses[arr[r]]) {
+      var diff = links.length - resourses[arr[r]];
+      for (var i  = 0; i< diff; i++) {
+        this.cardOut(links[i]);
       }
     }
-
+    if (links.length < resourses[arr[r]]) {
+      var diff = resourses[arr[r]] - links.length;   
+      for (var i  = 1; i<= diff; i++) {
+        this.cardIn(this['$' + classPrefix + arr[r]], arr[r]);
+      }  
+    }
   }
 
-  else {
-
-  }
 }
 
-var PlayerYou = function(args) {
-  var _this = new Player(args);
-  return _this;
-};
-PlayerYou.prototype = Player.prototype;
-
-var PlayerOpp = function(args) {
-  var _this = new Player(args);
-  return _this;
-};
-PlayerOpp.prototype = Player.prototype;
