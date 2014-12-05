@@ -72,6 +72,18 @@ Board.prototype.initialPlayers = function() {
   }
 }
 
+
+Board.prototype.initialTrade = function() {
+  var tradeArgs = this.args.trade;
+  for (var i in tradeArgs) {
+    var key = 'X' + tradeArgs[i].x + 'Y' + tradeArgs[i].y
+    this.trade[key] = new Trade(tradeArgs[i]);
+  }
+  for (var i in this.trade) {
+    this.trade[i].createHTML();
+  }
+}
+
 Board.prototype.createHTML = function() {
   this.initialHexagon();
   this.initialVillages();
@@ -120,7 +132,7 @@ Board.prototype.createVillages = function() {
   var setIntervalId = setInterval(func, 400)
 }
 
-Board.prototype.createroads = function() {
+Board.prototype.createRoads = function() {
   var roads = this.roads;
   var board = this;
 
