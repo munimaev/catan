@@ -6,6 +6,13 @@ body {
     overflow: hidden;
     padding: 0;
     margin: 0;
+    -webkit-transform: perspective(2600px) ;
+  -moz-transform: perspective(2600px) ;
+  -ms-transform: perspective(2600px) ;
+  -o-transform: perspective(2600px) ;
+  transform: perspective(2600px) ;
+    -webkit-transform-style: preserve-3d;
+
 }
 .d3 {
   height: 100%;
@@ -13,15 +20,14 @@ body {
   position: absolute;
   top: 20%;
     
-  -webkit-transform: perspective(2600px) rotateX(60deg);
--moz-transform: perspective(2600px) rotateX(60deg);
--ms-transform: perspective(2600px) rotateX(60deg);
--o-transform: perspective(2600px) rotateX(60deg);
-transform: perspective(2600px) rotateX(60deg);
+  -webkit-transform: rotateX(45deg) translate3d(0,0,0 );
+-moz-transform: rotateX(45deg) translate3d(0,0,0 );
+-ms-transform: rotateX(45deg) translate3d(0,0,0 );
+-o-transform: rotateX(45deg) translate3d(0,0,0 );
+transform: rotateX(45deg) translate3d(0,0,0 );
 
     -webkit-transform-origin: 50% -10%;
     -webkit-transform-style: preserve-3d;
-
 }
 .rotate {
   width: 100%;
