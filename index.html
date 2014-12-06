@@ -376,8 +376,8 @@
         }]
     }
     var board = new Board();
-//var socket = new WebSocket("ws://" + window.location.host + "/Catan/socket");
-var socket = {};
+var socket = new WebSocket("ws://" + window.location.host + "/Catan/socket");
+//var socket = {};
 window.onload = function() {
     socket.onopen = function () {
       //  msg("Соединение открылось");
