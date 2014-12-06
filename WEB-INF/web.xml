@@ -16,9 +16,17 @@
         <servlet-name>main</servlet-name>
         <servlet-class>Main</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>main</servlet-name>
         <url-pattern>/server</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>socket</servlet-name>
+        <servlet-class>SocketTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>socket</servlet-name>
+        <url-pattern>/socket</url-pattern>
     </servlet-mapping>
 </web-app>
