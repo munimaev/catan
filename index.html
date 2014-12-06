@@ -375,11 +375,31 @@
             color: 'orange'
         }]
     }
-    var board = new Board(args);
-    board.createHTML();
-    board.createTiles();
-    board.createVillages();
-    board.createRoads();
+    var board = new Board();
+//var socket = new WebSocket("ws://" + window.location.host + "/Catan/socket");
+var socket = {};
+window.onload = function() {
+    socket.onopen = function () {
+      //  msg("Соединение открылось");
+    };
+    socket.onclose = function () {
+      //  msg("Соединение закрылось");
+    };
+    socket.onmessage = function (event) {
+        //msg("Пришло сообщение с содержанием: " + event.data);
+        console.log(event);
+      board.updateData(eval('('+event.data+')'));
+      board.createHTML();
+      board.createTiles();
+      board.createVillages();
+      board.createRoads();
+    };
+}
+      // board.updateData(args);
+      // board.createHTML();
+      // board.createTiles();
+      // board.createVillages();
+      // board.createRoads();
     </script>
 
 

@@ -5,12 +5,12 @@
  * @param {number} args.y Y-coordinat
  */
 var Board = function (args) {
-  this.args = args;
-  if (!('hexes' in args)) {
-    throw {
-      message: 'Недостаток аргументов hexes.'
-    }
-  }
+  // this.args = args;
+  // if (!('hexes' in args)) {
+  //   throw {
+  //     message: 'Недостаток аргументов hexes.'
+  //   }
+  // }
   this.$this = $('#board');
   this.hexes = {};
   this.villages = {};
@@ -20,7 +20,13 @@ var Board = function (args) {
   };
   this.flags.createTiles = false;
   this.flags.createVillages = false;
+  this.updateData(args)
 }
+Board.prototype.updateData = function(args) {
+  this.args = args;
+}
+
+
 
 Board.prototype.initialHexagon = function() {
   var hexArgs = this.args.hexes;
