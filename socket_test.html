@@ -5,20 +5,35 @@
     <title></title>
 </head>
 <body>
-    Смотри консоль.
+    <h4>Монитор сообщений: </h4>
+    <div style="margin-bottom: 10px;">
+        <input type="text" id="msg" value="Текст сообщения" />
+        <input type="button" value="Отспавить сообщение" onclick="socket.send(document.getElementById('msg').value)"/>
+    </div>
+    <div id="monitor"></div>
 </body>
 <script>
-    window.onload = function() {
-        var socket = new WebSocket("ws://localhost:8080/Catan/socket");
-        socket.onopen = function () {
-          console.log("Соединение открылось");
-        };
-        socket.onclose = function () {
-          console.log ("Соединение закрылось");
-        };
-        socket.onmessage = function (event) {
-          console.log ("Пришло сообщение с содержанием:", event.data);
-        };
+msg = (function() {
+    var count = 0;
+    var monitor = document.getElementById("monitor");
+
+    return function(msg) {
+        monitor.innerHTML += "<div>" + (++count) + ".&nbsp;&nbsp;&nbsp;" + msg + "</div>";
     }
+})()
+
+var socket = new WebSocket("ws://localhost:8080/Catan/socket");
+
+window.onload = function() {
+    socket.onopen = function () {
+        msg("Соединение открылось");
+    };
+    socket.onclose = function () {
+        msg("Соединение закрылось");
+    };
+    socket.onmessage = function (event) {
+        msg("Пришло сообщение с содержанием: " + event.data);
+    };
+}
 </script>
 </html>
