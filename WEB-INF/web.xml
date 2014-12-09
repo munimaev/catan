@@ -29,4 +29,13 @@
         <servlet-name>socket</servlet-name>
         <url-pattern>/socket</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>enter</servlet-name>
+        <servlet-class>Entrance</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>enter</servlet-name>
+        <url-pattern>/enter</url-pattern>
+    </servlet-mapping>
 </web-app>

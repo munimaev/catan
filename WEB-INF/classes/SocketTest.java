@@ -8,13 +8,8 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.util.ArrayList;
-import java.util.Set;
-import java.util.concurrent.CopyOnWriteArraySet;
 
 
-/**
- * Created by Viktor on 05.12.2014.
- */
 public class SocketTest extends WebSocketServlet {
     @Override
     protected StreamInbound createWebSocketInbound(String s, HttpServletRequest httpServletRequest) {
