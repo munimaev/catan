@@ -1,25 +1,25 @@
 import java.util.ArrayList;
 
-/**
- * Created by Viktor on 09.12.2014.
- */
 public interface ITable {
     /**
-     * Получить список всех игроков с этого стола.
-     * @return
+     * @return Список всех игроков с этого стола.
      */
     public ArrayList<IPlayer> getPlayers();
 
     /**
-     * Получить экземпляр конкретного игрока по id его http сессии.
-     * @param sessionId
-     * @return
+     * @param sessionId  id http сессии игрока.
+     * @return Экземпляр конкретного игрока.
      */
     public IPlayer getPlayer(String sessionId);
 
     /**
-     * Получить id стола. Скорее всего он бедет складываться из session id игроков за столом.
-     * @return
+     * Скорее всего id стола будет складываться из session id игроков за столом.
+     * @return Id стола.
      */
     public String getTableId();
+
+    /**
+     * @return Json в виде строки с ситуацией на столе.
+     */
+    public String getSituation();
 }
