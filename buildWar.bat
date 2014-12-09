@@ -1,4 +1,4 @@
-git pull upstream master
+# git pull upstream master
 
 del ..\Catan.war
 
