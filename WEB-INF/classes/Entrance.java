@@ -64,7 +64,7 @@ public class Entrance extends HttpServlet {
 
             for (ITable table : tables) {
                 // TODO: добавить запятые и обернуть все в массив
-                answer.append(JsonAnswers.table(table.getTableId(), table.getTableName()));
+                answer.append(JsonAnswers.table(table.getId(), table.getName()));
             }
         }
         else {
