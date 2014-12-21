@@ -23,12 +23,12 @@ public interface ITable {
      * Скорее всего id стола будет складываться из session id игроков за столом.
      * @return Id стола.
      */
-    public String getTableId();
+    public String getId();
 
     /**
      * @return Название стола.
      */
-    public String getTableName();
+    public String getName();
 
     /**
      * @return Json в виде строки с ситуацией на столе.
