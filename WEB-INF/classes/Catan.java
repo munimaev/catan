@@ -23,26 +23,31 @@ public class Catan implements ICatan{
 
     @Override
     public ITable getTable(String tableId) {
+        // TODO: сделать
         return null;
     }
 
     @Override
     public boolean createTable(ArrayList<IPlayer> players, String tableName) {
+        // TODO: сделать
         return false;
     }
 
     @Override
     public boolean deleteTable(String tableId) {
+        // TODO: сделать
         return false;
     }
 
     @Override
     public boolean deleteTable(ITable table) {
+        // TODO: сделать
         return false;
     }
 
     @Override
     public boolean deleteTable(IPlayer player) {
+        // TODO: сделать
         return false;
     }
 }

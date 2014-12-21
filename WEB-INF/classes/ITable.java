@@ -19,6 +19,11 @@ public interface ITable {
     public String getTableId();
 
     /**
+     * @return Название стола.
+     */
+    public String getTableName();
+
+    /**
      * @return Json в виде строки с ситуацией на столе.
      */
     public String getSituation();
