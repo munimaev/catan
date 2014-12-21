@@ -7,80 +7,68 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Entrance extends HttpServlet {
-    /**
-     * Имена возможных параметров запроса
-     */
-    private enum Options {
-        ACTION("action"),
-        TABLES_COUNT("tables_count"),
-        GET_TABLES("get_tables"),
-        FIRST_TABLE("first_table"),
-        LAST_TABLE("last_table"),
-        CREATE_TABLE("create_tables");
+    // Наименования возможных параметров запроса
+    private String optAction = "action";
+    private String optFirstTable = "first_table";
+    private String optLastTable = "last_table";
 
-        private String option;
-
-        Options(String option) {
-            this.option = option;
-        }
-
-        @Override
-        public String toString() {
-            return option;
-        }
-    }
+    // Наименования возможных действий
+    private String actionTablesCount = "tables_count";
+    private String actionGetTables = "get_tables";
+    private String actionCreateTable = "create_tables";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
-        String sessionId = req.getRequestedSessionId();
-        PrintWriter pw = resp.getWriter();
+        resp.setContentType("text/json");
+        StringBuilder answer = new StringBuilder();
 
-        String action = req.getParameter(Options.ACTION.toString());
+//        String sessionId = req.getRequestedSessionId();
+//        answer.append("<p>Session id: " + sessionId + "</p>\n\r");
+
+        String action = req.getParameter(optAction);
 
         if(action == null) {
-            pw.println(JsonAnswers.empty());
+            answer.append(JsonAnswers.empty());
             return;
         }
 
         // Обработка action
-        if (action.equals(Options.TABLES_COUNT.toString())) {
-            pw.println(JsonAnswers.tablesCount(getTablesCount()));
+        if (action.equals(actionTablesCount)) {
+            answer.append(JsonAnswers.tablesCount(getTablesCount()));
         }
-        else if(action.equals(Options.CREATE_TABLE.toString())) {
-            pw.println("<p>create_tables</p>");
+        else if(action.equals(actionCreateTable)) {
+            answer.append("<p>" + actionCreateTable + "</p>");
         }
-        else if(action.equals(Options.GET_TABLES.toString())) {
+        else if(action.equals(actionGetTables)) {
             int first_table = 0;
             int last_table = getTablesCount() - 1;
 
-            if(req.getParameter(Options.FIRST_TABLE.toString()) != null) {
-                first_table = Integer.parseInt(req.getParameter(Options.FIRST_TABLE.toString()));
-                return;
-            } else if(req.getParameter(Options.LAST_TABLE.toString()) != null) {
-                last_table = Integer.parseInt(req.getParameter(Options.LAST_TABLE.toString()));
-                return;
+            if(req.getParameter(optFirstTable) != null) {
+                first_table = Integer.parseInt(req.getParameter(optFirstTable));
+            } else if(req.getParameter(optLastTable) != null) {
+                last_table = Integer.parseInt(req.getParameter(optLastTable));
             }
 
             ArrayList<ITable> tables = getTables(first_table, last_table);
 
-            for (ITable table : tables) {
-                // TODO: добавить запятые и обернуть все в массив
-                pw.println(JsonAnswers.table(table.getTableId(), table.getTableName()));
+            if (tables.size() == 0) {
+                answer.append(JsonAnswers.empty());
+                return;
             }
 
-            pw.println("<p>get_tables</p>");
+            for (ITable table : tables) {
+                // TODO: добавить запятые и обернуть все в массив
+                answer.append(JsonAnswers.table(table.getTableId(), table.getTableName()));
+            }
         }
         else {
-            pw.println(JsonAnswers.empty());
+            answer.append(JsonAnswers.empty());
         }
 
-        pw.println("<p>Session id: " + sessionId + "</p>");
+        try (PrintWriter pw = resp.getWriter()) {
+            pw.println(answer.toString());
+        }
 
-        pw.println(Integer.parseInt(req.getParameter("first_table")));
-
-
-        pw.close();
     }
 
     private int getTablesCount() {
@@ -98,8 +86,4 @@ public class Entrance extends HttpServlet {
 
         return tables;
     }
-
-
-
-
 }
