@@ -5,27 +5,36 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import com.google.gson.Gson;
 
 public class Entrance extends HttpServlet {
     // Наименования возможных параметров запроса
     private String optAction = "action";
     private String optFirstTable = "first_table";
-    private String optLastTable = "last_table";
 
     // Наименования возможных действий
     private String actionTablesCount = "tables_count";
     private String actionGetTables = "get_tables";
     private String actionCreateTable = "create_tables";
 
+    /**
+     * Стандартное количество возвращаемых столов
+     */
+    private int TABLE_COUNT = 25;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/json");
+        resp.setContentType("application/json");
         StringBuilder answer = new StringBuilder();
 
 //        String sessionId = req.getRequestedSessionId();
 //        answer.append("<p>Session id: " + sessionId + "</p>\n\r");
 
         String action = req.getParameter(optAction);
+
+
+        Gson gson = new Gson();
+
 
         if(action == null) {
             answer.append(JsonAnswers.empty());
@@ -41,15 +50,12 @@ public class Entrance extends HttpServlet {
         }
         else if(action.equals(actionGetTables)) {
             int first_table = 0;
-            int last_table = getTablesCount() - 1;
 
             if(req.getParameter(optFirstTable) != null) {
                 first_table = Integer.parseInt(req.getParameter(optFirstTable));
-            } else if(req.getParameter(optLastTable) != null) {
-                last_table = Integer.parseInt(req.getParameter(optLastTable));
             }
 
-            ArrayList<ITable> tables = getTables(first_table, last_table);
+            ArrayList<ITable> tables = getTables(first_table, TABLE_COUNT);
 
             if (tables.size() == 0) {
                 answer.append(JsonAnswers.empty());
@@ -71,17 +77,24 @@ public class Entrance extends HttpServlet {
 
     }
 
+    /**
+     * @return Количество существующих столов.
+     */
     private int getTablesCount() {
         return Catan.getInstance().getTables().size();
     }
 
-    private ArrayList<ITable> getTables(int first, int last) {
-        ArrayList<ITable> tables = new ArrayList<ITable>();
+    /**
+     * С помощью этого метода можно получить список из нескольких игровых столов.
+     * @param first Номер первого получаемого стола.
+     * @param count Количество столов, которое мы хотим получить.
+     * @return Список некоторого количества игровых столов.
+     */
+    private ArrayList<ITable> getTables(int first, int count) {
+        ArrayList<ITable> tables = new ArrayList<>();
 
-        for (int i = 0; i < Catan.getInstance().getTables().size(); i++) {
-            if (i >= first && i <= last) {
-                tables.add(Catan.getInstance().getTables().get(i));
-            }
+        for (int i = 0; i < getTablesCount() && i < first + count; i++) {
+            tables.add(Catan.getInstance().getTables().get(i));
         }
 
         return tables;
