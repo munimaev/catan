@@ -1,7 +1,7 @@
 /**
  * Этот класс хранит шаблоны ответов клиенту.
  */
-public abstract class JsonAnswers {
+public abstract class JsonAnswers{
     /**
      * @return Пустой объект.
      */
