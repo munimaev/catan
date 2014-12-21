@@ -2,10 +2,17 @@ import java.util.ArrayList;
 
 public class Catan implements ICatan{
     private static ICatan instance = null;
-    private final ArrayList<ITable> tables = new ArrayList<ITable>();
+    /**
+     * Список существующих столов.
+     */
+    private final ArrayList<ITable> tables = new ArrayList<>();
 
-    private Catan() {
-    }
+    /**
+     * Список пользователей игры.
+     */
+    private final ArrayList<IUser> users = new ArrayList<>();
+
+    private Catan() {}
 
     public static ICatan getInstance() {
         if(instance == null) {
@@ -14,8 +21,6 @@ public class Catan implements ICatan{
         return instance;
     }
 
-
-
     @Override
     public ArrayList<ITable> getTables() {
         return tables;
@@ -23,7 +28,9 @@ public class Catan implements ICatan{
 
     @Override
     public ITable getTable(String tableId) {
-        // TODO: сделать
+        for (ITable table : tables) {
+            if (tableId.equals(table.getId())) { return table; }
+        }
         return null;
     }
 
@@ -49,5 +56,13 @@ public class Catan implements ICatan{
     public boolean deleteTable(IPlayer player) {
         // TODO: сделать
         return false;
+    }
+
+    @Override
+    public IUser findUser(String userName) {
+        for (IUser user : users) {
+            if (userName.equals(user.getUserName())) { return user; }
+        }
+        return null;
     }
 }
