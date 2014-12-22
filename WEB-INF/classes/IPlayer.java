@@ -3,7 +3,7 @@ public interface IPlayer {
      * Получить id http сессии игрока.
      * @return
      */
-    public String getSessionId();
+    public IUser getUser();
 
     /**
      * @return Цвет игрока.

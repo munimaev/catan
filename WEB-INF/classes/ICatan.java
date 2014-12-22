@@ -48,4 +48,11 @@ public interface ICatan {
      * @return В случае успеха возвращает true, и false в случае неудачи.
      */
     public boolean deleteTable(IPlayer player);
+
+    /**
+     * Найти пользователя с данным именем.
+     * @param userName имя искомого пользователя.
+     * @return Конкретный экземпляр пользователя.
+     */
+    public IUser findUser(String userName);
 }
