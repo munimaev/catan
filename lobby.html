@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="js/jquery.js"></script>
+<body>
+
+
+
+<h1>Лобби</h1>
+<div class="row">
+  <table class="table" id="tables">
+    <!-- <tr>
+      <th width="30%">#</th>
+      <th width="40%">pA</th>
+      <th width="40%">pB</th>
+    </tr> -->
+  </table>
+</div>
+<script>
+$.ajax({
+  method: "GET",
+  url: "/enter",
+  data: {
+    action : 'tables_count'
+  },
+  dataType: "json",
+  success : function(data){
+    $('#tables').append('<tr><th>Столов</th><th>=</th><th>'+data.tables_count+'</th></tr>')
+  }
+});
+
+</script>
+
+
+
+
+
+</body>
+</html>
