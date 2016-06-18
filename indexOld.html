@@ -1,0 +1,410 @@
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/hexagon.css" rel="stylesheet" type="text/css">
+    <link href="css/port.css" rel="stylesheet" type="text/css">
+    <link href="css/road.css" rel="stylesheet" type="text/css">
+    <link href="css/village.css" rel="stylesheet" type="text/css">
+    <link href="css/interface.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+
+<div class="modal">
+  <table width="100%" cellspacing="0px" cellpadding="0px">
+    <tbody>
+      <tr >
+        <td class="trader red seleced" width="20%">Для всех
+        </td>
+        <td class="trader orange unactive" width="20%">Предложение
+        </td>
+        <td class="trader blue " width="20%">Нет</td>
+        <td class="trader white unactive" width="20%">-</td>
+        <td class="trader" width="20%">Банк</td>
+      </tr>
+      <tr >
+      <td  colspan="5" class="borderBottom paddinTop">
+          <div class="card wood"></div>
+          </td>
+      </tr>
+      <tr class="arrow out">
+        <td class=""><span>&#9650;</span></td>
+        <td class=""><span>&#9650;</span></td>
+        <td class="active"><span>&#9650;</span></td>
+        <td class="active"><span>&#9650;</span></td>
+        <td class=""><span>&#9650;</span></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="card wood"></div>
+        </td>
+        <td>
+          <div class="card clay"></div>
+        </td>
+        <td>
+          <div class="card sheep"></div>
+        </td>
+        <td>
+          <div class="card wheat"></div>
+        </td>
+        <td>
+          <div class="card iron"></div>
+        </td>
+      </tr>
+      <tr class="card_count" height="47px">
+        <td>×0</td>
+        <td>×0</td>
+        <td>×2</td>
+        <td>×1</td>
+        <td>×0</td>
+      </tr>
+      <tr class="arrow in">
+        <td class="active"><span>&#9660;</span></td>
+        <td class="active"><span>&#9660;</span></td>
+        <td class="active"><span>&#9660;</span></td>
+        <td class="active"><span>&#9660;</span></td>
+        <td class="active"><span>&#9660;</span></td>
+      </tr>
+      <tr>
+      <td  colspan="5" class="borderTop paddinTop">
+          <div class="card clay"></div>
+          <div class="card clay"></div>
+          <div class="card clay"></div>
+          <div class="card clay"></div>
+          </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="trader">Запретить обмен</td>
+        <td  colspan="2" class="trader">Обмен</td>
+        <td class="trader">Отмена</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="d3">
+  <div class="rotate">
+    <div class="board" id="board"></div>
+    <div class="buildings" id="buildings"></div>
+  </div>
+</div>
+
+
+
+
+<div class="interface your">
+  <div class="player you">
+  <div id="you">
+    <table cellpadding="0" cellspacing="1px" width="100%">
+        <tbody valign="top"><tr>
+          <td width="50px"> </td>
+          <td width="100px">Стоимость</td>
+          <td rowspan="5">&nbsp;</td>
+          <td>Русурсы</td>
+          <td rowspan="5">&nbsp;</td>
+          <td>Карты</td>
+          <td rowspan="5">&nbsp;</td>
+          <td>Сыгранные</td>
+          <td rowspan="5">&nbsp;</td>
+          <td>Очки</td>
+        </tr>
+        <tr>
+          <td onclick="Action.build.road();" onmouseover="Action.hover.road();">Дорога</td>
+          <td>
+            <div class="resourse_icon wood"></div>
+             <div class="resourse_icon clay"></div> 
+          </td>
+          <td rowspan="4" style="display:block;position:relative">
+              <div class="cardWrap">
+            <div id="wood"></div>
+            <div id="clay"></div>
+            <div id="sheep"></div>
+            <div id="wheat"></div>
+            <div id="iron"></div>
+            </div>
+          </td>
+          <td rowspan="4" style="display:block;position:relative">
+              <div class="cardWrap">
+            <div id="knight"></div>
+            <div id="plenty"></div>
+            <div id="monopoly"></div>
+            <div id="point"></div>
+            <div id="buildroad"></div>
+            </div>
+          </td>
+          <td rowspan="4" style="display:block;position:relative">
+              <div class="cardWrap">
+            <div id="youknight"></div>
+            <div id="youplenty"></div>
+            <div id="youmonopoly"></div>
+            <div id="youpoint"></div>
+            <div id="youbuildroad"></div>
+            </div>
+          </td>
+          <td rowspan="4" class="victoryPoints">N</td>
+        </tr>
+        <tr>
+          <td onclick="Action.build.village();"  onmouseover="Action.hover.village();">Деревня</td>
+          <td>
+            <div class="resourse_icon wood"></div>
+             <div class="resourse_icon clay"></div> 
+            <div class="resourse_icon sheep"></div>
+             <div class="resourse_icon wheat"></div> </td>
+        </tr>
+        <tr>
+          <td onclick="Action.build.city();" onmouseover="Action.hover.city();">Город</td>
+          <td>
+             <div class="resourse_icon wheat"></div>
+             <div class="resourse_icon wheat"></div>
+             <div class="resourse_icon iron"></div>
+             <div class="resourse_icon iron"></div>
+             <div class="resourse_icon iron"></div></td>
+        </tr>
+        <tr>
+          <td onclick="Action.build.card();" onmouseover="Action.hover.card();">Карта</td>
+          <td>
+             <div class="resourse_icon sheep"></div>
+             <div class="resourse_icon wheat"></div>
+             <div class="resourse_icon iron"></div></td>
+        </tr>
+    </tbody></table>
+  </div>
+  </div>
+</div>
+
+
+
+<div class="interface opps">
+  <div class="player opp" style="width:31%">
+    <div id="opp1">
+      <table cellpadding="0" cellspacing="1px" width="100%">
+          <tbody valign="top"><tr>
+            <td  class="oppResourses">Русурсы</td>
+            <td class="oppResourses">Карты</td>
+            <td rowspan="5">&nbsp;</td>
+            <td>Сыгранные</td>
+            <td rowspan="5">&nbsp;</td>
+            <td>Очки</td>
+          </tr>
+          <tr>
+            <td rowspan="4">
+              <div class="card back">×3</div>
+            </td>
+            <td rowspan="4">
+              <div class="card special">×1</div>
+            </td>
+            <td rowspan="4">
+              <div class="cardWrap">
+                <div id="opp1knight"></div>
+                <div id="opp1plenty"></div>
+                <div id="opp1monopoly"></div>
+                <div id="opp1point"></div>
+                <div id="opp1buildroad"></div>
+              </div>
+            </td>
+          <td rowspan="4" class="victoryPoints">N</td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+      </tbody></table>
+   </div>
+  </div>
+  <div class="player opp" style="width:32%">
+    <div id="opp2">
+      <table cellpadding="0" cellspacing="1px" width="100%">
+          <tbody valign="top"><tr>
+            <td class="oppResourses">Русурсы</td>
+            <td class="oppResourses">Карты</td>
+            <td rowspan="5">&nbsp;</td>
+            <td>Сыгранные</td>
+            <td rowspan="5">&nbsp;</td>
+            <td>Очки</td>
+          </tr>
+          <tr>
+            <td rowspan="4">
+              <div class="card back">×3</div>
+            </td>
+            <td rowspan="4">
+              <div class="card special">×1</div>
+            </td>
+            <td rowspan="4">
+              <div class="cardWrap">
+
+                <div id="opp2knight"></div>
+                <div id="opp2plenty"></div>
+                <div id="opp2monopoly"></div>
+                <div id="opp2point"></div>
+                <div id="opp2buildroad"></div>
+              </div>
+            </td>
+          <td rowspan="4" class="victoryPoints">N</td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+      </tbody></table>
+    </div>
+  </div>
+  <div class="player opp" style="width:31%">
+  <div id="opp3">
+    <table cellpadding="0" cellspacing="1px" width="100%">
+        <tbody valign="top"><tr>
+          <td  class="oppResourses">Русурсы</td>
+          <td class="oppResourses">Карты</td>
+            <td rowspan="5">&nbsp;</td>
+          <td>Сыгранные</td>
+            <td rowspan="5">&nbsp;</td>
+          <td>Очки</td>
+        </tr>
+        <tr>
+          <td rowspan="4">
+            <div class="card back">×3</div>
+          </td>
+          <td rowspan="4">
+            <div class="card special">×1</div>
+          </td>
+          <td rowspan="4" >
+              <div class="cardWrap">
+            <div id="opp3knight"></div>
+            <div id="opp3plenty"></div>
+            <div id="opp3monopoly"></div>
+            <div id="opp3point"></div>
+            <div id="opp3buildroad"></div>
+            </div>
+          </td>
+          <td rowspan="4" class="victoryPoints">N</td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+    </tbody></table>
+  </div>
+  </div>
+</div>
+
+
+    <script src="js/Action.js"></script>
+    <script src="js/Board.js"></script>
+    <script src="js/Hexagon.js"></script>
+    <script src="js/Village.js"></script>
+    <script src="js/Road.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/PlayerOpp.js"></script>
+    <script src="js/PlayerYou.js"></script>
+    <script src="js/Trade.js"></script>
+    <script >
+    var args = {
+        hexes: [
+    {x: 0, y: 2, type: "ocean"},
+    {x: 0, y: 4, type: "ocean"},
+    {x: 0, y: 6, type: "ocean"},
+    {x: 0, y: 8, type: "ocean"},
+
+    
+    {x: 1, y: 1, type: "ocean"},
+    {x: 1, y: 3, type: "forest"},
+    {x: 1, y: 5, type: "plain"},
+    {x: 1, y: 7, type: "plain"},
+    {x: 1, y: 9, type: "ocean"},
+
+
+    {x: 2, y: 0, type: "ocean"},
+    {x: 2, y: 2, type: "forest"},
+    {x: 2, y: 4, type: "plain"},
+    {x: 2, y: 6, type: "mountain"},
+    {x: 2, y: 8, type: "valley"},
+    {x: 2, y: 10, type: "ocean"},
+
+    {x: 3, y: -1, type: "ocean"},
+    {x: 3, y: 1, type: "hill"},
+    {x: 3, y: 3, type: "mountain"},
+    {x: 3, y: 5, type: "valley"},
+    {x: 3, y: 7, type: "dessert"},
+    {x: 3, y: 9, type: "forest"},
+    {x: 3, y: 11, type: "ocean"},
+
+
+
+    {x: 4, y: 0, type: "ocean"},
+    {x: 4, y: 2, type: "valley"},
+    {x: 4, y: 4, type: "hill"},
+    {x: 4, y: 6, type: "forest"},
+    {x: 4, y: 8, type: "valley"},
+    {x: 4, y: 10, type: "ocean"},
+
+    {x: 5, y: 1, type: "ocean"},
+    {x: 5, y: 3, type: "hill"},
+    {x: 5, y: 5, type: "plain"},
+    {x: 5, y: 7, type: "mountain"},
+    {x: 5, y: 9, type: "ocean"},
+
+
+    {x: 6, y: 2, type: "ocean"},
+    {x: 6, y: 4, type: "ocean"},
+    {x: 6, y: 6, type: "ocean"},
+    {x: 6, y: 8, type: "ocean"}],
+        villages: [{
+            x: 3,
+            y: 3,
+            color: 'red'
+        }, {
+            x: 5,
+            y: 4,
+            color: 'orange'
+        }],
+        roads: [{
+            x: 3,
+            y: 3,
+            color: 'red'
+        }, {
+            x: 5,
+            y: 4,
+            color: 'orange'
+        }]
+    }
+    var board = new Board();
+var socket = new WebSocket("ws://" + window.location.host + "/Catan/socket");
+//var socket = {};
+window.onload = function() {
+    socket.onopen = function () {
+      //  msg("Соединение открылось");
+    };
+    socket.onclose = function () {
+      //  msg("Соединение закрылось");
+    };
+    socket.onmessage = function (event) {
+        //msg("Пришло сообщение с содержанием: " + event.data);
+        console.log(event);
+      board.updateData(eval('('+event.data+')'));
+      board.createHTML();
+      board.createTiles();
+      board.createVillages();
+      board.createRoads();
+    };
+}
+      board.updateData(args);
+      board.createHTML();
+      board.createTiles();
+      board.createVillages();
+      board.createRoads();
+    </script>
+
+
+</body>
+</html>
+
+
+

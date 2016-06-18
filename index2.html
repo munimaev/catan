@@ -1,0 +1,172 @@
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="js2/jquery.js"></script>
+</head>
+<body>
+
+<div class="d3">
+<div class="rotate">
+
+<div class="board" id="board">
+</div>
+
+<div class="buildings" id="buildings">
+</div>
+
+</div>
+</div>
+
+
+<div class="interface your">
+  <div class="player you">
+    <table cellpadding="0" cellspacing="1px">
+        <tr>
+          <td>build</td>
+          <td>cost</td>
+          <td> </td>
+          <td>resourse</td>
+          <td> </td>
+          <td>card</td>
+          <td> </td>
+          <td>used</td>
+          <td> </td>
+          <td>points</td>
+        </tr>
+        <tr>
+          <td onclick="Action.build.road();">road</td>
+          <td>[ ][ ]</td>
+          <td rowspan="4"></td>
+          <td rowspan="4">
+            <div class="recourse r1"></div>
+            <div class="recourse r2"></div>
+            <div class="recourse r3"></div>
+            <div class="recourse r4"></div>
+            <div class="recourse r5"></div>
+          </td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+        </tr>
+        <tr>
+          <td  onclick="Action.build.village();">village</td>
+          <td>[ ][ ][ ][ ]</td>
+        </tr>
+        <tr>
+          <td  onclick="Action.build.city();">city</td>
+          <td>[ ][ ][ ][ ][ ]</td>
+        </tr>
+        <tr>
+          <td  onclick="Action.build.card();">card</td>
+          <td>[ ][ ][ ]</td>
+        </tr>
+    </table>
+  </div>
+</div>
+
+
+    <script src="js2/Action.js"></script>
+    <script src="js2/Board.js"></script>
+    <script src="js2/Hexagon.js"></script>
+    <script src="js2/Village.js"></script>
+    <script src="js2/Road.js"></script>
+    <script src="js2/Player.js"></script>
+    <script >
+    var hexX1Y1 = new Hexagon({x:3,y:5});
+    hexX1Y1.createHTML();
+    var args = {
+        hexes: [{
+            x: 1,
+            y: 3
+        }, {
+            x: 1,
+            y: 5
+        }, {
+            x: 1,
+            y: 7
+        }, {
+            x: 2,
+            y: 2
+        }, {
+            x: 2,
+            y: 4
+        }, {
+            x: 2,
+            y: 6
+        }, {
+            x: 2,
+            y: 8
+        }, {
+            x: 3,
+            y: 1
+        }, {
+            x: 3,
+            y: 3
+        }, {
+            x: 3,
+            y: 5
+        }, {
+            x: 3,
+            y: 7
+        }, {
+            x: 3,
+            y: 9
+        }, {
+            x: 4,
+            y: 2
+        }, {
+            x: 4,
+            y: 4
+        }, {
+            x: 4,
+            y: 6
+        }, {
+            x: 4,
+            y: 8
+        }, {
+            x: 5,
+            y: 3
+        }, {
+            x: 5,
+            y: 5
+        }, {
+            x: 5,
+            y: 7
+        }],
+        villages: [{
+            x: 3,
+            y: 3,
+            color: 'red'
+        }, {
+            x: 5,
+            y: 4,
+            color: 'red'
+        }],
+        roads: [{
+            x: 3,
+            y: 3,
+            color: 'blue'
+        }, {
+            x: 5,
+            y: 4,
+            color: 'green'
+        }]
+    }
+    var board = new Board(args);
+    board.createHTML();
+    board.createTiles();
+    // board.createVillages();
+    // board.createRoads();
+    </script>
+
+
+</body>
+</html>
+
+
+
