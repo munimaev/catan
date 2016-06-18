@@ -1,0 +1,842 @@
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="js/jquery.js"></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="d3">
+<div class="rotate">
+<div class="board">
+
+
+    <div class="hexagon X1 Y3">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X1 Y5">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X1 Y7">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+
+    <div class="hexagon X2 Y2">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X2 Y4">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X2 Y6">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X2 Y8">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+
+
+    <div class="hexagon X3 Y1">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X3 Y3">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X3 Y5">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X3 Y7">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X3 Y9">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+
+
+
+    <div class="hexagon X4 Y2">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X4 Y4">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X4 Y6">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X4 Y8">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+
+    <div class="hexagon X5 Y3">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X5 Y5">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+    <div class="hexagon X5 Y7">
+        <div class="Hex1"></div>
+        <div class="Hex2"></div>
+        <div class="Hex3"></div>
+    </div>
+
+</div>
+
+<div class="buildings">
+    
+    <div class="road X5 Y1">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X6 Y1">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X7 Y1">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+    <div class="road X3 Y2">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X4 Y2">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X5 Y2">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X7 Y2">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X8 Y2">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X9 Y2">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+    <div class="road X1 Y3">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X2 Y3">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X3 Y3">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X5 Y3">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X6 Y3">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X7 Y3">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X9 Y3">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X10 Y3">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X11 Y3">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+    <div class="road X1 Y4">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X3 Y4">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X4 Y4">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X5 Y4">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X7 Y4">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X8 Y4">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X9 Y4">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X11 Y4">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+    <div class="road X1 Y5">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X2 Y5">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X3 Y5">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X5 Y5">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X6 Y5">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X7 Y5">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X9 Y5">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X10 Y5">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X11 Y5">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+    <div class="road X1 Y6">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X3 Y6">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X4 Y6">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X5 Y6">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X7 Y6">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X8 Y6">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X9 Y6">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X11 Y6">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+
+    <div class="road X1 Y7">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X2 Y7">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X3 Y7">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X5 Y7">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X6 Y7">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X7 Y7">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X9 Y7">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X10 Y7">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X11 Y7">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+
+    <div class="road X1 Y8">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X3 Y8">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X4 Y8">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X5 Y8">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X7 Y8">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X8 Y8">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X9 Y8">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X11 Y8">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+
+    <div class="road X2 Y9">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X3 Y9">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X5 Y9">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X6 Y9">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X7 Y9">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X9 Y9">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X10 Y9">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+
+
+
+    <div class="road X4 Y10">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X5 Y10">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+    <div class="road X7 Y10">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+    <div class="road X8 Y10">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+    <div class="road X6 Y11">
+        <div class="roadTop"></div>
+        <div class="roadBottom"></div>
+    </div>
+
+
+
+
+
+    <div class="village X6 Y1">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X7 Y1">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+
+    <div class="village X4 Y2">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X5 Y2">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X8 Y2">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X9 Y2">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+
+
+
+    <div class="village X2 Y3">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X3 Y3">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X6 Y3">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X7 Y3">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X10 Y3">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X11 Y3">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+
+
+
+    <div class="village X1 Y4">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X4 Y4">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X5 Y4">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X8 Y4">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X9 Y4">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X12 Y4">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+
+
+
+
+    <div class="village X2 Y5">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X3 Y5">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X6 Y5">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X7 Y5">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X10 Y5">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X11 Y5">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+
+
+    <div class="village X1 Y6">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X4 Y6">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X5 Y6">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X8 Y6">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X9 Y6">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X12 Y6">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+
+
+    <div class="village X2 Y7">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X3 Y7">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X6 Y7">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X7 Y7">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X10 Y7">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X11 Y7">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+
+
+    <div class="village X1 Y8">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X4 Y8">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X5 Y8">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X8 Y8">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X9 Y8">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X12 Y8">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+
+
+    <div class="village X2 Y9">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X3 Y9">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X6 Y9">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X7 Y9 city">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X10 Y9">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X11 Y9">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+
+
+
+
+    <div class="village X4 Y10">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X5 Y10">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X8 Y10">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X9 Y10">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+
+
+
+    <div class="village X6 Y11">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    <div class="village X7 Y11">
+        <div class="vil1"></div>
+        <div class="vil2"></div>
+        <div class="vil3"></div>
+    </div>
+    
+</div>
+</div>
+</div>
+<div class="interface your">
+  <div class="player you">
+    <table cellpadding="0" cellspacing="1px">
+        <tr>
+          <td>build</td>
+          <td>cost</td>
+          <td> </td>
+          <td>resourse</td>
+          <td> </td>
+          <td>card</td>
+          <td> </td>
+          <td>used</td>
+          <td> </td>
+          <td>points</td>
+        </tr>
+        <tr>
+          <td>road</td>
+          <td>[ ][ ]</td>
+          <td rowspan="4"></td>
+          <td rowspan="4">
+            <div class="recourse r1"></div>
+            <div class="recourse r2"></div>
+            <div class="recourse r3"></div>
+            <div class="recourse r4"></div>
+            <div class="recourse r5"></div>
+          </td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+        </tr>
+        <tr>
+          <td>village</td>
+          <td>[ ][ ][ ][ ]</td>
+        </tr>
+        <tr>
+          <td>city</td>
+          <td>[ ][ ][ ][ ][ ]</td>
+        </tr>
+        <tr>
+          <td>card</td>
+          <td>[ ][ ][ ]</td>
+        </tr>
+    </table>
+  </div>
+</div>
+
+<div class="interface opps">
+  <div class="player opp">
+    <table cellpadding="0" cellspacing="1px">
+        <tr>
+          <td>resourse</td>
+          <td> </td>
+          <td>card</td>
+          <td> </td>
+          <td>used</td>
+          <td> </td>
+          <td>points</td>
+        </tr>
+        <tr>
+          <td rowspan="4">
+            <div class="recourse r1">&times;3</div>
+          </td>
+          <td rowspan="4"></td>
+          <td rowspan="4">
+            <div class="recourse r2">&times;1</div>
+          </td>
+          <td rowspan="4"></td>
+          <td rowspan="4"></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+  </div>
+</div>
+
+</body> 
+</html>
